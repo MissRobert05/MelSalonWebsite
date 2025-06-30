@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Mel's Cut 'n' Braids</title>
+  <style>
+    .fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fab {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background .3s;
+  cursor: pointer;
+}
+.fab:hover {
+  background: #f0f0f0;
+}
+.fab img {
+  width: 24px;
+  height: 24px;
+}
+
+    :root {
+      --black: #000;
+      --white: #fff;
+      --red: #e63946;
+      --light-grey: #f8f9fa;
+    }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('meee.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #222; /* dark text */
+}
+
+h1, h2, .section-title {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400; /* Great Vibes only has one weight */
+  font-style: normal;
+}
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      background: var(--black);
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5rem;
+    }
+
+    nav ul li a {
+      background-color: var(--red);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    .hero {
+      position: relative;
+      height: 90vh;
+      background: url('salon-bg.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(60, 59, 59, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .cta-btn {
+      background-color: var(--red);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border: none;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+
+    section {
+  padding: 4rem 2rem;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.653); /* soft white overlay */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.071);
+}
+
+
+    h2 {
+      color: var(--red);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #e63946; /* Signature red */
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft shadow for contrast */
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 2.1;
+  font-family: 'Poppins', sans-serif;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+    ul li {
+      margin: 0.5rem 0;
+    }
+
+    #services {
+  text-align: center;
+}
+
+#services ul {
+  list-style: none;
+  padding: 0;
+}
+
+#services ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+#services ul li {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
+  background: rgba(12, 12, 12, 0.215); /* soft background */
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+    .gallery-grid {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery-grid img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    blockquote {
+      border-left: 5px solid var(--red);
+      padding-left: 1rem;
+      margin: 1rem auto;
+      max-width: 600px;
+    }
+
+    form {
+      background-color: var(--light-grey);
+      color: var(--black);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.75rem;
+      background-color: var(--black);
+      color: var(--white);
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: var(--red);
+    }
+
+.booking-info {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.booking-hours {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.whatsapp-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128c7e;
+  transform: scale(1.05);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+  .founder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.founder-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.founder-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.founder-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e63946;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.founder-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.founder-caption {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #e63946;
+}
+
+    footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+footer p {
+  font-size: 0.85rem !important;
+}
+
+    .popup {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--red);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      z-index: 100;
+      font-weight: bold;
+    }
+
+    #giftcard h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--red);
+}
+
+#giftcard form input,
+#giftcard form select,
+#giftcard form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+  </style>
+</head>
+<body>
+  <div class="popup" id="popup">📣 Grand Opening Offers Available Now!</div>
+
+  <header class="hero">
+    <div class="overlay">
+      <h1>Where Style Meets Perfection</h1>
+      <a href="#booking" class="cta-btn">Book an Appointment</a>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li> <p>Haircuts</p> </li>
+      <li> <p>Trendy Braids</p> </li>
+      <li> <p>Beard Trims</p> </li>
+      <li> <p>Kids’ Grooming</p> </li>
+      <li> <p>Hair Coloring</p> </li>
+      <li> <p>Hair Treatment</p> </li>
+      <li> <p>Home Service Appointments</p> </li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Transformations</h2>
+    <div class="gallery-grid">
+      <img src="IMG-20250405-WA0007.jpg" alt="Transformation 5" />
+      <img src="curtis.jpg" alt="Transformation 6" />
+      <img src="hair2..jpg" alt="Transformation 7" />
+      <img src="ola.jpg" alt="Transformation 8" />
+      <img src="louis1.jpg" alt="Transformation 9" />
+      <img src="hair1.jpg" alt="Transformation 10" />
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Client Feedback</h2>
+    <blockquote> <p>“The best stylist in Calabar! Mel gave me a new level of confidence.” – Happy Client</p> </blockquote>
+    <blockquote> <p>“Professional, friendly, and super talented.” – Loyal Customer</p> </blockquote>
+  </section>
+
+  <section id="booking">
+    <section class="py-12 px-4 max-w-4xl mx-auto text-center"> </section>
+    <h2 class="text-3xl font-bold mb-4">Book an Appointment</h2>
+    <div class="booking-info">
+  <p class="booking-hours">Available Mon–Sat | 9AM – 9PM</p>
+    <form action="mailto:missrobert00@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="date" name="date" required />
+      <textarea name="message" placeholder="Message / Hair Request"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+     <a href="https://wa.me/2348128493302" class="whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon" />
+    Chat on WhatsApp
+  </a>
+</div>
+  </section>
+
+  <section id="about">
+    <h2>About Mel’s Cut 'n' Braids</h2>
+      <div class="founder-container">
+      <img src="about-salon.jpg" alt="Sa's Photo" class="founder-img" />
+      <div>
+    <p>Mel’s Cut 'n' Braids is a leading unisex grooming and hair styling studio based in Calabar, Nigeria. Established with a vision to redefine modern haircare, our studio blends creativity, culture, and professionalism to deliver top-notch beauty services for men, women, and children.</p>
+    <p>We specialize in stylish haircuts, trendy braids, beard trims, kids’ grooming, coloring, treatment, and personalized home service appointments. Our environment is friendly, energetic, and inclusive — a safe space for self-expression, transformation, and self-care. Whether you walk in for a quick trim or a full glam transformation, our mission is simple: to leave you looking great and feeling even better.</p>
+    <p>We are not just a salon — we’re a movement that celebrates beauty in all its forms. Mel’s Cut 'n' Braids is where style meets perfection.</p>
+  </section>
+
+  <section id="Founder">
+    <h2>Meet Our Founder</h2>
+    <a href="https://www.instagram.com/melodieeeee05" target="_blank" class="founder-link">
+  <div class="founder-image-wrapper">
+    <img src="mel-founder.png" alt="Melody's Photo" class="founder-img" />
+    <p class="founder-caption">Esther Robert – Founder of Mel's Cut 'n' Braids</p>
+  </div>
+</a>
+
+    <div>
+        <p>Esther — known fondly as “Melody” — is the visionary and hands behind Mel’s Cut 'n' Braids. She’s a trailblazer in the male-dominated barbing industry, with a reputation for unmatched attention to detail, creative flair, and deep connection with clients.</p>
+        <p>Her journey began out of pure passion and a pair of clippers. Today, Melody is a certified professional stylist with over 5 years of experience in both braids and grooming.</p>
+        <p>As a female barber and entrepreneur in Nigeria, she understands the struggles of standing out in a competitive space — and she turns that experience into inspiration, especially for young women and creatives.</p>
+        <p>Melody’s philosophy is simple: when you sit in her chair, you leave feeling seen, fresh, and empowered.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="giftcard">
+  <h2 class="section-title">🎁 Send a Gift Card</h2>
+  <p style="text-align:center; max-width:600px; margin:0 auto;">
+    Treat someone special to a fresh new look. Buy a Mel’s Cut ‘n’ Braids gift card for any service or amount.
+  </p>
+  
+  <form action="mailto:missrobert00@gmail.com" method="POST" enctype="text/plain" style="background:#fff; color:#000; max-width:600px; margin:2rem auto; padding:2rem; border-radius:10px;">
+    <input type="text" name="senderName" placeholder="Your Name" required />
+    <input type="email" name="senderEmail" placeholder="Your Email" required />
+    <input type="text" name="recipientName" placeholder="Recipient's Name" required />
+    <textarea name="message" placeholder="Optional Message"></textarea>
+    <select name="service">
+      <option value="" disabled selected>Select Service</option>
+      <option value="Haircut">Haircut</option>
+      <option value="Braids">Braids</option>
+      <option value="Beard Trim">Beard Trim</option>
+      <option value="Any Service">Any Service</option>
+    </select>
+    <a href="https://wa.me/2348128493302?text=Hi%20Mel,%20I'd%20like%20to%20buy%20a%20gift%20card%20for%20a%20friend!" target="_blank" class="whatsapp-btn" style="display:inline-block; margin-top:1rem;">Buy Gift Card</a>
+  </form>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Mel’s Cut 'n' Braids. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Popup disappears after 30 minutes
+    setTimeout((30) => {
+      document.getElementById('popup').style.display = 'none';
+    }, 5000);
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('nav a[href^=\"#\"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = document.querySelector(this.getAttribute('href'));
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  <div class="fab-container">
+  <a href="mailto:missrobert00@gmail.com" class="fab" title="Email">
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email">
+  </a>
+  <a href="https://www.instagram.com/melaninbarber" target="_blank" class="fab" title="Instagram">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="instagram">
+  </a>
+</div>
+
+</body>
+</html>
