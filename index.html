@@ -153,8 +153,8 @@ h1, h2, .section-title {
 
     h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: 3.5rem;
-  font-weight: 600;
+  font-size: 3.0rem;
+  font-weight: 500;
   color: #e63946; /* Signature red */
   text-align: center;
   margin-bottom: 2rem;
@@ -360,26 +360,190 @@ footer p {
       font-weight: bold;
     }
 
-    #giftcard h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: var(--red);
+/* Gift Card Section Styling */
+#giftcards {
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
-#giftcard form input,
-#giftcard form select,
-#giftcard form textarea {
-  width: 100%;
+.section-title {
+  font-family: 'great vibes', cursive;
+  font-size: 2.5rem;
+  color: #e63946;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  color: #e63946;
+}
+
+.centered-text {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.gift-card {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gift-card img {
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gift-card p {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.pay-btn {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background-color: #c92b3b;
+}
+
+.gift-card-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gift-card-form input,
+.gift-card-form textarea {
   padding: 0.75rem;
-  margin-top: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+
+.giftcard-preview-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.thank-you-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e63946;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 9999;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
+/* === Responsive Layout === */
+* {
+  box-sizing: border-box;
+}
+
+/* Make images and videos responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive grid for gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+/* Responsive form width */
+form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive hero text */
+.overlay h1 {
+  font-size: 2.2rem;
+}
+
+@media (min-width: 768px) {
+  .overlay h1 {
+    font-size: 3.5rem;
+  }
+}
+
+/* Center text where needed */
+.text-center {
+  text-align: center;
+}
+
+/* Responsive section padding */
+section {
+  padding: 3rem 1rem;
+}
+
+/* Navbar: allow wrapping and spacing */
+nav ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem;
+}
+
+/* Responsive founder section */
+.founder-container {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .founder-container {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+/* Smaller footer text */
+footer p {
+  font-size: 0.8rem;
 }
 
   </style>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
 </head>
 <body>
   <div class="popup" id="popup">📣 Grand Opening Offers Available Now!</div>
@@ -398,9 +562,9 @@ footer p {
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#booking">Booking</a></li>
+      <li><a href="#giftcard">Giftcard</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#founder">Meet Our Founder</a></li>
-    <li><a href="#giftcard">Giftcard</a></li>
     </ul>
   </nav>
 
@@ -454,6 +618,48 @@ footer p {
 </div>
   </section>
 
+  <section id="giftcards">
+  <h2 class="section-title">Gift a Salon Experience</h2>
+  <p class="centered-text">Surprise someone special with a beauty treat from Mel’s Cut 'n' Braids</p>
+
+  <!-- Preset Gift Cards -->
+  <div class="gift-card">
+    <img src="10k giftcard.jpg" alt="₦10,000 Gift Card" />
+    <p>₦10,000 Gift Card</p>
+    <button onclick="payWithPaystack(10000, '₦10,000 Gift Card')">Buy Now</button>
+  </div>
+
+  <div class="gift-card">
+    <img src="15k giftcard.jpg" alt="₦15,000 Gift Card" />
+    <p>₦15,000 Gift Card</p>
+    <button onclick="payWithPaystack(15000, '₦15,000 Gift Card')">Buy Now</button>
+  </div>
+
+  <div class="gift-card">
+    <img src="20k giftcard.jpg" alt="₦20,000 Gift Card" />
+    <p>₦20,000 Gift Card</p>
+    <button onclick="payWithPaystack(20000, '₦20,000 Gift Card')">Buy Now</button>
+  </div>
+
+  <!-- Custom Gift Card -->
+  <h3 class="section-subtitle">Create a Custom Gift Card</h3>
+  <form class="gift-card-form" id="customGiftCardForm">
+    <input type="text" name="sender" placeholder="Name of Sender" required />
+    <input type="text" name="recipient" placeholder="Name of Recipient" required />
+    <input type="email" name="email" placeholder="Recipient’s Email" required />
+    <input type="text" name="occasion" placeholder="Occasion" required />
+    <input type="text" name="package" placeholder="Service or Package" required />
+    <textarea name="message" placeholder="Personalized Message" required></textarea>
+    
+    <button type="submit" class="cta-btn">Send Gift Card</button>
+  </form>
+</section>
+
+<!-- Thank You Popup -->
+<div id="thankYouPopup" class="thank-you-popup" style="display: none;">
+  🎉 Thank you! Your gift card has been submitted.
+</div>
+
   <section id="about">
     <h2>About Mel’s Cut 'n' Braids</h2>
       <div class="founder-container">
@@ -478,31 +684,12 @@ footer p {
         <p>Her journey began out of pure passion and a pair of clippers. Today, Melody is a certified professional stylist with over 5 years of experience in both braids and grooming.</p>
         <p>As a female barber and entrepreneur in Nigeria, she understands the struggles of standing out in a competitive space — and she turns that experience into inspiration, especially for young women and creatives.</p>
         <p>Melody’s philosophy is simple: when you sit in her chair, you leave feeling seen, fresh, and empowered.</p>
+         <p><strong>Beyond the chair</strong>, Melody is also carving a path in the tech world. She recently began her tech journey, learning HTML, CSS, and basic JavaScript from scratch. With sheer determination, countless late nights, and zero prior coding background, she singlehandedly built this entire website — line by line — to bring her brand to life online.</p>
+      
+      <p>This website is not just a portfolio — it’s a symbol of her growth, resilience, and belief that you can learn anything you put your mind to. Melody hopes her journey encourages others to take up space, try new things, and never be afraid to reinvent themselves.</p>
       </div>
     </div>
   </section>
-
-  <section id="giftcard">
-  <h2 class="section-title">🎁 Send a Gift Card</h2>
-  <p style="text-align:center; max-width:600px; margin:0 auto;">
-    Treat someone special to a fresh new look. Buy a Mel’s Cut ‘n’ Braids gift card for any service or amount.
-  </p>
-  
-  <form action="mailto:missrobert00@gmail.com" method="POST" enctype="text/plain" style="background:#fff; color:#000; max-width:600px; margin:2rem auto; padding:2rem; border-radius:10px;">
-    <input type="text" name="senderName" placeholder="Your Name" required />
-    <input type="email" name="senderEmail" placeholder="Your Email" required />
-    <input type="text" name="recipientName" placeholder="Recipient's Name" required />
-    <textarea name="message" placeholder="Optional Message"></textarea>
-    <select name="service">
-      <option value="" disabled selected>Select Service</option>
-      <option value="Haircut">Haircut</option>
-      <option value="Braids">Braids</option>
-      <option value="Beard Trim">Beard Trim</option>
-      <option value="Any Service">Any Service</option>
-    </select>
-    <a href="https://wa.me/2348128493302?text=Hi%20Mel,%20I'd%20like%20to%20buy%20a%20gift%20card%20for%20a%20friend!" target="_blank" class="whatsapp-btn" style="display:inline-block; margin-top:1rem;">Buy Gift Card</a>
-  </form>
-</section>
 
   <footer>
     <p>&copy; 2025 Mel’s Cut 'n' Braids. All rights reserved.</p>
@@ -533,6 +720,70 @@ footer p {
     <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="instagram">
   </a>
 </div>
+
+<script>
+  document.getElementById('giftcard-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const recipient = document.getElementById('recipient').value;
+    const occasion = document.getElementById('occasion').value;
+    const services = document.getElementById('services').value;
+    const message = document.getElementById('message').value;
+
+    const text = `Hi Mel! I'd like to create a custom gift card.%0A
+Recipient: ${recipient}%0A
+Occasion: ${occasion}%0A
+Services: ${services}%0A
+Message: ${message}`;
+
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/2348128493302?text=${encodedText}`, '_blank');
+  });
+</script>
+
+<script>
+  // Form submission event
+  document.getElementById('customGiftCardForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Simulate sending the form (you can replace this with actual backend logic)
+    document.getElementById('thankYouPopup').style.display = 'block';
+
+    setTimeout(() => {
+      document.getElementById('thankYouPopup').style.display = 'none';
+      this.reset(); // Clear form
+    }, 3000);
+  });
+</script>
+
+<script>
+  function payWithPaystack(amount, label) {
+    var handler = PaystackPop.setup({
+      key: 'sk_test_d5b64b7406acd058531a649c646e158a46462c3c', // Replace with your Paystack public key
+      email: prompt("Enter your email to receive the gift card:"),
+      amount: amount * 100, // in kobo
+      currency: "NGN",
+      ref: 'GIFT-' + Math.floor((Math.random() * 1000000000) + 1),
+      metadata: {
+         custom_fields: [
+            {
+              display_name: "Gift Card",
+              variable_name: "gift_card",
+              value: label
+            }
+         ]
+      },
+      callback: function(response) {
+          alert("🎉 Payment successful! Ref: " + response.reference + "\nWe'll email the gift card shortly.");
+          // Optional: Redirect to thank you page or print
+      },
+      onClose: function() {
+          alert('❌ Transaction cancelled.');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
 
 </body>
 </html>
